@@ -1,0 +1,327 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SchoolDisciplineApp.API</name>
+    </assembly>
+    <members>
+        <member name="T:SchoolDisciplineApp.API.Controllers.AttendanceController">
+            <summary>
+            Manages student attendance records (CRUD operations).
+            </summary>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.AttendanceController.#ctor(SchoolDisciplineApp.Application.Services.Interfaces.IAttendanceService,SchoolDisciplineApp.Application.Services.Interfaces.IStudentService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SchoolDisciplineApp.API.Controllers.AttendanceController"/> class.
+            </summary>
+            <param name="attendanceService">Service responsible for managing attendance records.</param>
+            <param name="studentService">Service responsible for managing student records.</param>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.AttendanceController.GetAll(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Retrieves all attendance records, optionally filtered by class and month.
+            </summary>
+            <param name="classId">Optional: Filter by class ID.</param>
+            <param name="month">Optional: Filter by month (1-12).</param>
+            <returns>List of attendance records.</returns>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.AttendanceController.GetById(System.Int32)">
+            <summary>
+            Retrieves a specific attendance record by its unique ID.
+            </summary>
+            <param name="id">The unique ID of the attendance record.</param>
+            <returns>The attendance record details.</returns>
+            <response code="200">Returns the attendance record successfully.</response>
+            <response code="404">If no attendance record is found with the given ID.</response>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.AttendanceController.GetByStudentId(System.Int32)">
+            <summary>
+            Retrieves all attendance records for a specific student.
+            </summary>
+            <param name="studentId">The unique ID of the student.</param>
+            <returns>List of attendance records for the student.</returns>
+            <response code="200">Returns the list of attendance records successfully.</response>
+            <response code="404">If no records found for the student.</response>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.AttendanceController.GetAttendanceByClassAndDate(System.Int32,System.DateTime)">
+            <summary>
+            Retrieves all students in a class and their attendance status on a specified date.
+            Returns students even if there is no attendance record for them on that date (assumed present).
+            </summary>
+            <param name="classId">The ID of the class to filter students.</param>
+            <param name="date">The date to filter attendance records.</param>
+            <returns>List of students with their attendance status on the specified date.</returns>
+            <response code="200">Returns the list of students with attendance status.</response>
+            <response code="404">If no students found for the specified class.</response>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.AttendanceController.Add(SchoolDisciplineApp.Application.DTOs.AttendanceRecordDto)">
+            <summary>
+            Adds a new attendance record.
+            </summary>
+            <param name="dto">The attendance record DTO object to add.</param>
+            <returns>The created attendance record.</returns>
+            <response code="201">Attendance record added successfully.</response>
+            <response code="400">If the input data is invalid.</response>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.AttendanceController.Update(System.Int32,SchoolDisciplineApp.Application.DTOs.AttendanceRecordDto)">
+            <summary>
+            Updates an existing attendance record.
+            </summary>
+            <param name="id">The unique ID of the record to update.</param>
+            <param name="dto">The updated attendance record DTO data.</param>
+            <returns>Update result.</returns>
+            <response code="200">Attendance record updated successfully.</response>
+            <response code="400">If the input data is invalid.</response>
+            <response code="404">If no record is found with the given ID.</response>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.AttendanceController.Delete(System.Int32)">
+            <summary>
+            Deletes an attendance record by its ID.
+            </summary>
+            <param name="id">The unique ID of the record to delete.</param>
+            <returns>Delete result.</returns>
+            <response code="200">Attendance record deleted successfully.</response>
+            <response code="404">If no record is found with the given ID.</response>
+        </member>
+        <member name="T:SchoolDisciplineApp.API.Controllers.BehaviorController">
+            <summary>
+            Manages student behavior records (CRUD operations).
+            </summary>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.BehaviorController.#ctor(SchoolDisciplineApp.Application.Services.Interfaces.IBehaviorService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SchoolDisciplineApp.API.Controllers.BehaviorController"/> class.
+            </summary>
+            <param name="behaviorService">Service responsible for managing behavior records.</param>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.BehaviorController.GetAll(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Retrieves all behavior records.
+            </summary>
+            <param name="classId">Optional: Filter by class ID.</param>
+            <param name="studentId">Optional: Filter by student ID.</param>
+            <returns>List of all behavior records matching filters.</returns>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.BehaviorController.GetById(System.Int32)">
+            <summary>
+            Retrieves a specific behavior record by its unique ID.
+            </summary>
+            <param name="id">The unique ID of the behavior record.</param>
+            <returns>Behavior record details.</returns>
+            <response code="200">Returns the behavior record successfully.</response>
+            <response code="404">If no record found with the given ID.</response>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.BehaviorController.GetByStudentId(System.Int32)">
+            <summary>
+            Retrieves all behavior records for a specific student.
+            </summary>
+            <param name="studentId">The unique ID of the student.</param>
+            <returns>List of behavior records for the student.</returns>
+            <response code="200">Returns records successfully.</response>
+            <response code="404">If no records found for the student.</response>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.BehaviorController.Add(SchoolDisciplineApp.Application.DTOs.BehaviorRecordDto)">
+            <summary>
+            Adds a new behavior record.
+            </summary>
+            <param name="dto">The behavior record DTO object to add.</param>
+            <returns>The created behavior record.</returns>
+            <response code="201">Behavior record added successfully.</response>
+            <response code="400">If the input data is invalid.</response>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.BehaviorController.Update(System.Int32,SchoolDisciplineApp.Application.DTOs.BehaviorRecordDto)">
+            <summary>
+            Updates an existing behavior record.
+            </summary>
+            <param name="id">The unique ID of the record to update.</param>
+            <param name="dto">The updated behavior record DTO data.</param>
+            <returns>Update result.</returns>
+            <response code="200">Behavior record updated successfully.</response>
+            <response code="400">If the input data is invalid.</response>
+            <response code="404">If no record is found with the given ID.</response>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.BehaviorController.Delete(System.Int32)">
+            <summary>
+            Deletes a behavior record by its ID.
+            </summary>
+            <param name="id">The unique ID of the record to delete.</param>
+            <returns>Delete result.</returns>
+            <response code="200">Behavior record deleted successfully.</response>
+            <response code="404">If no record is found with the given ID.</response>
+        </member>
+        <member name="T:SchoolDisciplineApp.API.Controllers.ClassController">
+            <summary>
+            Manages class-related operations such as retrieving, adding, updating, and deleting classes.
+            </summary>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.ClassController.#ctor(SchoolDisciplineApp.Application.Services.Interfaces.IClassService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SchoolDisciplineApp.API.Controllers.ClassController"/> class.
+            </summary>
+            <param name="classService">The service responsible for handling class operations.</param>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.ClassController.GetAll">
+            <summary>
+            Retrieves all school classes.
+            </summary>
+            <returns>A list of all classes.</returns>
+            <response code="200">Returns all classes successfully.</response>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.ClassController.GetById(System.Int32)">
+            <summary>
+            Retrieves a specific class by its unique ID.
+            </summary>
+            <param name="id">The unique ID of the class.</param>
+            <returns>The class details if found; otherwise, a NotFound response.</returns>
+            <response code="200">Returns the class details successfully.</response>
+            <response code="404">If no class is found with the given ID.</response>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.ClassController.Add(SchoolDisciplineApp.Application.DTOs.SchoolClassDto)">
+            <summary>
+            Adds a new school class.
+            </summary>
+            <param name="dto">The DTO object for the class to be added.</param>
+            <returns>The newly created class object.</returns>
+            <response code="201">Class added successfully.</response>
+            <response code="400">If the input data is invalid.</response>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.ClassController.Update(System.Int32,SchoolDisciplineApp.Application.DTOs.SchoolClassDto)">
+            <summary>
+            Updates an existing class information.
+            </summary>
+            <param name="id">The unique ID of the class to update.</param>
+            <param name="dto">The updated class DTO data.</param>
+            <response code="204">Class updated successfully.</response>
+            <response code="400">If the input data is invalid.</response>
+            <response code="404">If no class is found with the given ID.</response>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.ClassController.Delete(System.Int32)">
+            <summary>
+            Deletes a specific class by ID.
+            </summary>
+            <param name="id">The unique ID of the class to delete.</param>
+            <response code="204">Class deleted successfully.</response>
+            <response code="404">If no class is found with the given ID.</response>
+        </member>
+        <member name="T:SchoolDisciplineApp.API.Controllers.ReportsController">
+            <summary>
+            Manages reports in the system, including listing, retrieving, adding, and exporting reports.
+            Aggregates data from Attendance, Behaviors, and Students.
+            </summary>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.ReportsController.#ctor(SchoolDisciplineApp.Application.Services.Interfaces.IReportService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SchoolDisciplineApp.API.Controllers.ReportsController"/> class.
+            </summary>
+            <param name="reportService">Service responsible for managing reports.</param>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.ReportsController.GetAll">
+            <summary>
+            Retrieves all reports in the system.
+            </summary>
+            <returns>List of all reports.</returns>
+            <response code="200">Returns the list of reports.</response>
+            <response code="404">If no reports exist.</response>
+            <response code="500">If a server error occurs.</response>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.ReportsController.GetById(System.Int32)">
+            <summary>
+            Retrieves a specific report by its unique ID.
+            </summary>
+            <param name="id">The unique ID of the report.</param>
+            <returns>The report with the specified ID.</returns>
+            <response code="200">Returns the requested report.</response>
+            <response code="404">If the report with the given ID does not exist.</response>
+            <response code="500">If a server error occurs.</response>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.ReportsController.Add(SchoolDisciplineApp.Application.DTOs.ReportDto)">
+            <summary>
+            Adds a new report to the system.
+            </summary>
+            <param name="dto">The report DTO object to add.</param>
+            <returns>The created report DTO.</returns>
+            <response code="201">Report successfully created.</response>
+            <response code="400">If the report data is invalid.</response>
+            <response code="500">If a server error occurs.</response>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.ReportsController.Export">
+            <summary>
+            Exports all reports in JSON format.
+            </summary>
+            <returns>A JSON list of all reports.</returns>
+            <response code="200">Returns the exported reports.</response>
+            <response code="500">If a server error occurs.</response>
+        </member>
+        <member name="T:SchoolDisciplineApp.API.Controllers.StudentController">
+            <summary>
+            Manages student-related operations such as retrieving, adding, updating, and deleting students.
+            </summary>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.StudentController.#ctor(SchoolDisciplineApp.Application.Services.Interfaces.IStudentService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SchoolDisciplineApp.API.Controllers.StudentController"/> class.
+            </summary>
+            <param name="studentService">The service responsible for handling student operations.</param>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.StudentController.GetAll(System.Nullable{System.Int32})">
+            <summary>
+            Retrieves all students from the system or filters by class if classId is provided.
+            </summary>
+            <param name="classId">Optional. The ID of the class to filter students.</param>
+            <returns>A list of students, optionally filtered by class.</returns>
+            <response code="200">Returns the list of students successfully.</response>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.StudentController.GetById(System.Int32)">
+            <summary>
+            Retrieves a specific student by their unique ID.
+            </summary>
+            <param name="id">The unique ID of the student.</param>
+            <returns>The student details if found; otherwise, a NotFound response.</returns>
+            <response code="200">Returns the student details successfully.</response>
+            <response code="404">If no student is found with the given ID.</response>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.StudentController.Add(System.Collections.Generic.List{SchoolDisciplineApp.Application.DTOs.CreateStudentDto})">
+            <summary>
+            Adds a new student or a list of students to the system.
+            </summary>
+            <param name="dtos">Single student DTO or a list of student DTOs.</param>
+            <returns>Result of the addition operation.</returns>
+            <response code="201">Student(s) added successfully.</response>
+            <response code="400">If the input data is invalid.</response>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.StudentController.Import(System.Collections.Generic.IEnumerable{SchoolDisciplineApp.Application.DTOs.CreateStudentDto})">
+            <summary>
+            Imports multiple students in bulk.
+            </summary>
+            <remarks>
+            Example of request body:
+            
+            [
+              { "name": "أحمد علي", "classId": 1, "rollNumber": "A01" },
+              { "name": "سارة محمد", "classId": 1, "rollNumber": "A02" }
+            ]
+            </remarks>
+            <param name="dtos">List of student DTOs to import.</param>
+            <returns>A message indicating how many students were successfully imported.</returns>
+            <response code="200">Returns the number of students successfully imported.</response>
+            <response code="400">If the input data is null, empty, or any student data is invalid.</response>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.StudentController.Update(System.Int32,SchoolDisciplineApp.Application.DTOs.CreateStudentDto)">
+            <summary>
+            Updates an existing student's information.
+            </summary>
+            <param name="id">The unique ID of the student to update.</param>
+            <param name="dto">The updated student DTO data.</param>
+            <response code="204">Student updated successfully.</response>
+            <response code="400">If the input data is invalid.</response>
+            <response code="404">If no student is found with the given ID.</response>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.StudentController.Delete(System.Int32)">
+            <summary>
+            Deletes a specific student from the system by ID.
+            </summary>
+            <param name="id">The unique ID of the student to delete.</param>
+            <response code="204">Student deleted successfully.</response>
+            <response code="404">If no student is found with the given ID.</response>
+        </member>
+    </members>
+</doc>

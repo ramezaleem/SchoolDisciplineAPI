@@ -1,0 +1,11 @@
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Domain\bin\Debug\net8.0\SchoolDisciplineApp.Domain.deps.json
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Domain\bin\Debug\net8.0\SchoolDisciplineApp.Domain.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Domain\bin\Debug\net8.0\SchoolDisciplineApp.Domain.pdb
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Domain\obj\Debug\net8.0\SchoolDisciplineApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Domain\obj\Debug\net8.0\SchoolDisciplineApp.Domain.AssemblyInfoInputs.cache
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Domain\obj\Debug\net8.0\SchoolDisciplineApp.Domain.AssemblyInfo.cs
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Domain\obj\Debug\net8.0\SchoolDisciplineApp.Domain.csproj.CoreCompileInputs.cache
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Domain\obj\Debug\net8.0\SchoolDisciplineApp.Domain.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Domain\obj\Debug\net8.0\refint\SchoolDisciplineApp.Domain.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Domain\obj\Debug\net8.0\SchoolDisciplineApp.Domain.pdb
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Domain\obj\Debug\net8.0\ref\SchoolDisciplineApp.Domain.dll

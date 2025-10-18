@@ -1,0 +1,18 @@
+﻿using SchoolDisciplineApp.Domain.Entities;
+
+namespace SchoolDisciplineApp.Infrastructure.Repositories
+{
+    public interface IAttendanceRepository
+    {
+        IQueryable<AttendanceRecord> GetAllQueryable ();
+
+        Task<IEnumerable<AttendanceRecord>> GetAllAsync ();
+        Task<AttendanceRecord?> GetByIdAsync ( int id );
+        Task<IEnumerable<AttendanceRecord>> GetByStudentIdAsync ( int studentId );
+        Task<IEnumerable<AttendanceRecord>> GetForClassByDateAsync ( int classId, DateTime date );
+
+        Task AddAsync ( AttendanceRecord record );
+        Task UpdateAsync ( AttendanceRecord record );
+        Task DeleteAsync ( int id );
+    }
+}

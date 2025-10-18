@@ -1,0 +1,17 @@
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Infrastructure\bin\Release\net8.0\SchoolDisciplineApp.Infrastructure.deps.json
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Infrastructure\bin\Release\net8.0\SchoolDisciplineApp.Infrastructure.runtimeconfig.json
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Infrastructure\bin\Release\net8.0\SchoolDisciplineApp.Infrastructure.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Infrastructure\bin\Release\net8.0\SchoolDisciplineApp.Infrastructure.pdb
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Infrastructure\bin\Release\net8.0\SchoolDisciplineApp.Domain.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Infrastructure\bin\Release\net8.0\SchoolDisciplineApp.Domain.pdb
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Infrastructure\obj\Release\net8.0\SchoolDisciplineApp.Infrastructure.csproj.AssemblyReference.cache
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Infrastructure\obj\Release\net8.0\SchoolDisciplineApp.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Infrastructure\obj\Release\net8.0\SchoolDisciplineApp.Infrastructure.AssemblyInfoInputs.cache
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Infrastructure\obj\Release\net8.0\SchoolDisciplineApp.Infrastructure.AssemblyInfo.cs
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Infrastructure\obj\Release\net8.0\SchoolDisciplineApp.Infrastructure.csproj.CoreCompileInputs.cache
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Infrastructure\obj\Release\net8.0\SchoolDi.97B5FE89.Up2Date
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Infrastructure\obj\Release\net8.0\SchoolDisciplineApp.Infrastructure.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Infrastructure\obj\Release\net8.0\refint\SchoolDisciplineApp.Infrastructure.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Infrastructure\obj\Release\net8.0\SchoolDisciplineApp.Infrastructure.pdb
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Infrastructure\obj\Release\net8.0\SchoolDisciplineApp.Infrastructure.genruntimeconfig.cache
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Infrastructure\obj\Release\net8.0\ref\SchoolDisciplineApp.Infrastructure.dll

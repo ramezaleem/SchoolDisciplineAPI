@@ -1,0 +1,17 @@
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Application\bin\Release\net8.0\SchoolDisciplineApp.Application.deps.json
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Application\bin\Release\net8.0\SchoolDisciplineApp.Application.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Application\bin\Release\net8.0\SchoolDisciplineApp.Application.pdb
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Application\bin\Release\net8.0\SchoolDisciplineApp.Domain.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Application\bin\Release\net8.0\SchoolDisciplineApp.Infrastructure.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Application\bin\Release\net8.0\SchoolDisciplineApp.Domain.pdb
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Application\bin\Release\net8.0\SchoolDisciplineApp.Infrastructure.pdb
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Application\obj\Release\net8.0\SchoolDisciplineApp.Application.csproj.AssemblyReference.cache
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Application\obj\Release\net8.0\SchoolDisciplineApp.Application.GeneratedMSBuildEditorConfig.editorconfig
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Application\obj\Release\net8.0\SchoolDisciplineApp.Application.AssemblyInfoInputs.cache
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Application\obj\Release\net8.0\SchoolDisciplineApp.Application.AssemblyInfo.cs
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Application\obj\Release\net8.0\SchoolDisciplineApp.Application.csproj.CoreCompileInputs.cache
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Application\obj\Release\net8.0\SchoolDi.12A30E4E.Up2Date
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Application\obj\Release\net8.0\SchoolDisciplineApp.Application.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Application\obj\Release\net8.0\refint\SchoolDisciplineApp.Application.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Application\obj\Release\net8.0\SchoolDisciplineApp.Application.pdb
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Application\obj\Release\net8.0\ref\SchoolDisciplineApp.Application.dll
