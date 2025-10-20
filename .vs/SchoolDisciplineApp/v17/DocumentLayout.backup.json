@@ -5,6 +5,26 @@
     {
       "AbsoluteMoniker": "D:0:0:{270D70AC-AD05-492C-AF61-8A2A5A5FAF0A}|SchoolDisciplineApp.API\\SchoolDisciplineApp.API.csproj|e:\\schooldisciplineapp\\schooldisciplineapp.api\\controllers\\attendancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{270D70AC-AD05-492C-AF61-8A2A5A5FAF0A}|SchoolDisciplineApp.API\\SchoolDisciplineApp.API.csproj|solutionrelative:schooldisciplineapp.api\\controllers\\attendancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C26E4D48-0B1E-4D15-BD63-F35475D4305A}|SchoolDisciplineApp.Application\\SchoolDisciplineApp.Application.csproj|e:\\schooldisciplineapp\\schooldisciplineapp.application\\dtos\\attendancerecorddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C26E4D48-0B1E-4D15-BD63-F35475D4305A}|SchoolDisciplineApp.Application\\SchoolDisciplineApp.Application.csproj|solutionrelative:schooldisciplineapp.application\\dtos\\attendancerecorddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C26E4D48-0B1E-4D15-BD63-F35475D4305A}|SchoolDisciplineApp.Application\\SchoolDisciplineApp.Application.csproj|e:\\schooldisciplineapp\\schooldisciplineapp.application\\services\\implementations\\attendanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C26E4D48-0B1E-4D15-BD63-F35475D4305A}|SchoolDisciplineApp.Application\\SchoolDisciplineApp.Application.csproj|solutionrelative:schooldisciplineapp.application\\services\\implementations\\attendanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C26E4D48-0B1E-4D15-BD63-F35475D4305A}|SchoolDisciplineApp.Application\\SchoolDisciplineApp.Application.csproj|e:\\schooldisciplineapp\\schooldisciplineapp.application\\services\\interfaces\\iattendanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C26E4D48-0B1E-4D15-BD63-F35475D4305A}|SchoolDisciplineApp.Application\\SchoolDisciplineApp.Application.csproj|solutionrelative:schooldisciplineapp.application\\services\\interfaces\\iattendanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA737914-56E4-4E83-A728-3EAD4A5F5013}|SchoolDisciplineApp.Infrastructure\\SchoolDisciplineApp.Infrastructure.csproj|e:\\schooldisciplineapp\\schooldisciplineapp.infrastructure\\repositories\\implementations\\attendancerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA737914-56E4-4E83-A728-3EAD4A5F5013}|SchoolDisciplineApp.Infrastructure\\SchoolDisciplineApp.Infrastructure.csproj|solutionrelative:schooldisciplineapp.infrastructure\\repositories\\implementations\\attendancerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA737914-56E4-4E83-A728-3EAD4A5F5013}|SchoolDisciplineApp.Infrastructure\\SchoolDisciplineApp.Infrastructure.csproj|e:\\schooldisciplineapp\\schooldisciplineapp.infrastructure\\repositories\\iattendancerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA737914-56E4-4E83-A728-3EAD4A5F5013}|SchoolDisciplineApp.Infrastructure\\SchoolDisciplineApp.Infrastructure.csproj|solutionrelative:schooldisciplineapp.infrastructure\\repositories\\iattendancerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,13 +62,74 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IAttendanceService.cs",
+              "DocumentMoniker": "E:\\SchoolDisciplineApp\\SchoolDisciplineApp.Application\\Services\\Interfaces\\IAttendanceService.cs",
+              "RelativeDocumentMoniker": "SchoolDisciplineApp.Application\\Services\\Interfaces\\IAttendanceService.cs",
+              "ToolTip": "E:\\SchoolDisciplineApp\\SchoolDisciplineApp.Application\\Services\\Interfaces\\IAttendanceService.cs",
+              "RelativeToolTip": "SchoolDisciplineApp.Application\\Services\\Interfaces\\IAttendanceService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T07:40:17.84Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AttendanceService.cs",
+              "DocumentMoniker": "E:\\SchoolDisciplineApp\\SchoolDisciplineApp.Application\\Services\\Implementations\\AttendanceService.cs",
+              "RelativeDocumentMoniker": "SchoolDisciplineApp.Application\\Services\\Implementations\\AttendanceService.cs",
+              "ToolTip": "E:\\SchoolDisciplineApp\\SchoolDisciplineApp.Application\\Services\\Implementations\\AttendanceService.cs",
+              "RelativeToolTip": "SchoolDisciplineApp.Application\\Services\\Implementations\\AttendanceService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T07:40:13.974Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AttendanceRecordDto.cs",
+              "DocumentMoniker": "E:\\SchoolDisciplineApp\\SchoolDisciplineApp.Application\\DTOs\\AttendanceRecordDto.cs",
+              "RelativeDocumentMoniker": "SchoolDisciplineApp.Application\\DTOs\\AttendanceRecordDto.cs",
+              "ToolTip": "E:\\SchoolDisciplineApp\\SchoolDisciplineApp.Application\\DTOs\\AttendanceRecordDto.cs",
+              "RelativeToolTip": "SchoolDisciplineApp.Application\\DTOs\\AttendanceRecordDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T07:40:06.767Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IAttendanceRepository.cs",
+              "DocumentMoniker": "E:\\SchoolDisciplineApp\\SchoolDisciplineApp.Infrastructure\\Repositories\\IAttendanceRepository.cs",
+              "RelativeDocumentMoniker": "SchoolDisciplineApp.Infrastructure\\Repositories\\IAttendanceRepository.cs",
+              "ToolTip": "E:\\SchoolDisciplineApp\\SchoolDisciplineApp.Infrastructure\\Repositories\\IAttendanceRepository.cs",
+              "RelativeToolTip": "SchoolDisciplineApp.Infrastructure\\Repositories\\IAttendanceRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T07:39:53.085Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AttendanceRepository.cs",
+              "DocumentMoniker": "E:\\SchoolDisciplineApp\\SchoolDisciplineApp.Infrastructure\\Repositories\\Implementations\\AttendanceRepository.cs",
+              "RelativeDocumentMoniker": "SchoolDisciplineApp.Infrastructure\\Repositories\\Implementations\\AttendanceRepository.cs",
+              "ToolTip": "E:\\SchoolDisciplineApp\\SchoolDisciplineApp.Infrastructure\\Repositories\\Implementations\\AttendanceRepository.cs",
+              "RelativeToolTip": "SchoolDisciplineApp.Infrastructure\\Repositories\\Implementations\\AttendanceRepository.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAywCsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T07:39:47.253Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "AttendanceController.cs",
               "DocumentMoniker": "E:\\SchoolDisciplineApp\\SchoolDisciplineApp.API\\Controllers\\AttendanceController.cs",
               "RelativeDocumentMoniker": "SchoolDisciplineApp.API\\Controllers\\AttendanceController.cs",
               "ToolTip": "E:\\SchoolDisciplineApp\\SchoolDisciplineApp.API\\Controllers\\AttendanceController.cs",
               "RelativeToolTip": "SchoolDisciplineApp.API\\Controllers\\AttendanceController.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAmwHgAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAHkAAAAAAAAAAAA/wNwAAABlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-18T08:03:06.96Z",
               "EditorCaption": ""

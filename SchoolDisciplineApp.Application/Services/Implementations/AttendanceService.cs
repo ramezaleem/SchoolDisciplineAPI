@@ -41,6 +41,10 @@ namespace SchoolDisciplineApp.Application.Services.Implementations
         {
             return await _attendanceRepository.GetByStudentIdAsync(studentId);
         }
+        public async Task<IEnumerable<AttendanceRecord>> GetForClassByDateAsync ( int classId, DateTime date )
+        {
+            return await _attendanceRepository.GetForClassByDateAsync(classId, date);
+        }
 
         public async Task AddAsync ( AttendanceRecord record )
         {
@@ -57,10 +61,6 @@ namespace SchoolDisciplineApp.Application.Services.Implementations
             await _attendanceRepository.DeleteAsync(id);
         }
 
-        public async Task<IEnumerable<AttendanceRecord>> GetForClassByDateAsync ( int classId, DateTime date )
-        {
-            return await _attendanceRepository.GetForClassByDateAsync(classId, date);
-        }
 
     }
 }

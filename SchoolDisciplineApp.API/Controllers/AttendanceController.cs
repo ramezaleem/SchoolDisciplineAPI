@@ -127,14 +127,20 @@ namespace SchoolDisciplineApp.API.Controllers
 
             var attendanceRecords = await _attendanceService.GetForClassByDateAsync(classId, date.Date);
 
+            if (attendanceRecords == null || !attendanceRecords.Any())
+                return NotFound(new { message = $"لا يوجد سجلات حضور في التاريخ {date:yyyy-MM-dd} للفصل رقم {classId}." });
+
             var result = students.Select(student =>
             {
                 var att = attendanceRecords.FirstOrDefault(a => a.StudentId == student.Id && a.Date.Date == date.Date);
                 return new
                 {
+                    id = att?.Id ?? 0,
                     studentId = student.Id,
                     name = student.Name,
-                    isAbsent = att?.IsAbsent ?? false
+                    classId = student.ClassId,
+                    date = date,
+                    isAbsent = att?.IsAbsent ?? false,
                 };
             });
 
@@ -164,7 +170,7 @@ namespace SchoolDisciplineApp.API.Controllers
 
             await _attendanceService.AddAsync(record);
 
-            dto.Id = record.Id; // تعيين الرقم بعد الإضافة
+            dto.Id = record.Id;
 
             return CreatedAtAction(nameof(GetById), new { id = record.Id }, new
             {
@@ -201,6 +207,45 @@ namespace SchoolDisciplineApp.API.Controllers
 
             return Ok(new { message = "تم تحديث سجل الحضور بنجاح." });
         }
+
+
+        /// <summary>
+        /// Updates multiple attendance records at once.
+        /// </summary>
+        /// <param name="dtos">A list of attendance record DTOs to be updated.</param>
+        /// <returns>Operation result including how many records were successfully updated.</returns>
+        /// <response code="200">All valid attendance records updated successfully.</response>
+        /// <response code="400">If the input data is invalid or empty.</response>
+        /// <response code="404">If none of the provided records were found in the database.</response>
+        [HttpPut("update-multiple")]
+        public async Task<IActionResult> UpdateMultiple ( [FromBody] List<AttendanceRecordDto> dtos )
+        {
+            if (dtos == null || !dtos.Any())
+                return BadRequest(new { message = "قائمة سجلات الحضور فارغة أو غير صالحة." });
+
+            int updatedCount = 0;
+
+            foreach (var dto in dtos)
+            {
+                var existingRecord = await _attendanceService.GetByIdAsync(dto.Id);
+                if (existingRecord == null)
+                    continue;
+
+                existingRecord.StudentId = dto.StudentId;
+                existingRecord.ClassId = dto.ClassId;
+                existingRecord.Date = dto.Date;
+                existingRecord.IsAbsent = dto.IsAbsent;
+
+                await _attendanceService.UpdateAsync(existingRecord);
+                updatedCount++;
+            }
+
+            if (updatedCount == 0)
+                return NotFound(new { message = "لم يتم العثور على أي سجلات حضور مطابقة للتحديث." });
+
+            return Ok(new { message = $"تم تحديث {updatedCount} سجل حضور بنجاح." });
+        }
+
 
         /// <summary>
         /// Deletes an attendance record by its ID.

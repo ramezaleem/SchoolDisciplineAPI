@@ -165,3 +165,4 @@ E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\School
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\SchoolDisciplineApp.API.pdb
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\SchoolDisciplineApp.API.genruntimeconfig.cache
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\ref\SchoolDisciplineApp.API.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\SchoolDisciplineApp.API.sourcelink.json

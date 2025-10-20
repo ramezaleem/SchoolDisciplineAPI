@@ -37,6 +37,24 @@ namespace SchoolDisciplineApp.Infrastructure.Repositories
                 .Include(r => r.Class)
                 .ToListAsync();
         }
+        public async Task<IEnumerable<AttendanceRecord>> GetForClassByDateAsync ( int classId, DateTime date )
+        {
+            var start = date.Date;
+            var end = start.AddDays(1);
+
+            return await _dbContext.AttendanceRecords
+                .Where(a => a.ClassId == classId && a.Date >= start && a.Date < end)
+                .Include(a => a.Student)
+                .Include(a => a.Class)
+                .ToListAsync();
+        }
+        public IQueryable<AttendanceRecord> GetAllQueryable ()
+        {
+            return _dbContext.AttendanceRecords
+                .Include(a => a.Student)
+                .Include(a => a.Class)
+                .AsQueryable();
+        }
 
         public async Task AddAsync ( AttendanceRecord record )
         {
@@ -60,20 +78,7 @@ namespace SchoolDisciplineApp.Infrastructure.Repositories
             }
         }
 
-        public IQueryable<AttendanceRecord> GetAllQueryable ()
-        {
-            return _dbContext.AttendanceRecords
-                .Include(a => a.Student)
-                .Include(a => a.Class)
-                .AsQueryable();
-        }
 
-        public async Task<IEnumerable<AttendanceRecord>> GetForClassByDateAsync ( int classId, DateTime date )
-        {
-            return await _dbContext.AttendanceRecords
-                .Where(a => a.ClassId == classId && a.Date.Date == date.Date)
-                .ToListAsync();
-        }
 
     }
 }

@@ -177,3 +177,4 @@ E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Debug\net8.0\SchoolDiscipline
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Debug\net8.0\SchoolDisciplineApp.API.genruntimeconfig.cache
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Debug\net8.0\ref\SchoolDisciplineApp.API.dll
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Debug\net8.0\SchoolDisciplineApp.API.sourcelink.json

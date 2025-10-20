@@ -15,3 +15,4 @@ E:\SchoolDisciplineApp\SchoolDisciplineApp.Infrastructure\obj\Release\net8.0\ref
 E:\SchoolDisciplineApp\SchoolDisciplineApp.Infrastructure\obj\Release\net8.0\SchoolDisciplineApp.Infrastructure.pdb
 E:\SchoolDisciplineApp\SchoolDisciplineApp.Infrastructure\obj\Release\net8.0\SchoolDisciplineApp.Infrastructure.genruntimeconfig.cache
 E:\SchoolDisciplineApp\SchoolDisciplineApp.Infrastructure\obj\Release\net8.0\ref\SchoolDisciplineApp.Infrastructure.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Infrastructure\obj\Release\net8.0\SchoolDisciplineApp.Infrastructure.sourcelink.json

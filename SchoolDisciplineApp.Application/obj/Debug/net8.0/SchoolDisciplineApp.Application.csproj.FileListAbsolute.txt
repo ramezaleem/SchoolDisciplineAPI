@@ -15,3 +15,4 @@ E:\SchoolDisciplineApp\SchoolDisciplineApp.Application\obj\Debug\net8.0\SchoolDi
 E:\SchoolDisciplineApp\SchoolDisciplineApp.Application\obj\Debug\net8.0\refint\SchoolDisciplineApp.Application.dll
 E:\SchoolDisciplineApp\SchoolDisciplineApp.Application\obj\Debug\net8.0\SchoolDisciplineApp.Application.pdb
 E:\SchoolDisciplineApp\SchoolDisciplineApp.Application\obj\Debug\net8.0\ref\SchoolDisciplineApp.Application.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Application\obj\Debug\net8.0\SchoolDisciplineApp.Application.sourcelink.json
