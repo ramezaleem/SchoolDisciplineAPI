@@ -73,6 +73,16 @@
             <response code="400">If the input data is invalid.</response>
             <response code="404">If no record is found with the given ID.</response>
         </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.AttendanceController.UpdateMultiple(System.Collections.Generic.List{SchoolDisciplineApp.Application.DTOs.AttendanceRecordDto})">
+            <summary>
+            Updates multiple attendance records at once.
+            </summary>
+            <param name="dtos">A list of attendance record DTOs to be updated.</param>
+            <returns>Operation result including how many records were successfully updated.</returns>
+            <response code="200">All valid attendance records updated successfully.</response>
+            <response code="400">If the input data is invalid or empty.</response>
+            <response code="404">If none of the provided records were found in the database.</response>
+        </member>
         <member name="M:SchoolDisciplineApp.API.Controllers.AttendanceController.Delete(System.Int32)">
             <summary>
             Deletes an attendance record by its ID.
@@ -256,11 +266,12 @@
             Manages student-related operations such as retrieving, adding, updating, and deleting students.
             </summary>
         </member>
-        <member name="M:SchoolDisciplineApp.API.Controllers.StudentController.#ctor(SchoolDisciplineApp.Application.Services.Interfaces.IStudentService)">
+        <member name="M:SchoolDisciplineApp.API.Controllers.StudentController.#ctor(SchoolDisciplineApp.Application.Services.Interfaces.IStudentService,SchoolDisciplineApp.Application.Services.Interfaces.IAttendanceService)">
             <summary>
             Initializes a new instance of the <see cref="T:SchoolDisciplineApp.API.Controllers.StudentController"/> class.
             </summary>
             <param name="studentService">The service responsible for handling student operations.</param>
+            <param name="attendanceService">The service responsible for managing attendance records.</param>
         </member>
         <member name="M:SchoolDisciplineApp.API.Controllers.StudentController.GetAll(System.Nullable{System.Int32})">
             <summary>

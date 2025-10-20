@@ -243,6 +243,54 @@
         }
       }
     },
+    "/api/Attendance/update-multiple": {
+      "put": {
+        "tags": [
+          "Attendance"
+        ],
+        "summary": "Updates multiple attendance records at once.",
+        "requestBody": {
+          "description": "A list of attendance record DTOs to be updated.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AttendanceRecordDto"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AttendanceRecordDto"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AttendanceRecordDto"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "All valid attendance records updated successfully."
+          },
+          "400": {
+            "description": "If the input data is invalid or empty."
+          },
+          "404": {
+            "description": "If none of the provided records were found in the database."
+          }
+        }
+      }
+    },
     "/api/Behavior": {
       "get": {
         "tags": [

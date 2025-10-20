@@ -266,11 +266,12 @@
             Manages student-related operations such as retrieving, adding, updating, and deleting students.
             </summary>
         </member>
-        <member name="M:SchoolDisciplineApp.API.Controllers.StudentController.#ctor(SchoolDisciplineApp.Application.Services.Interfaces.IStudentService)">
+        <member name="M:SchoolDisciplineApp.API.Controllers.StudentController.#ctor(SchoolDisciplineApp.Application.Services.Interfaces.IStudentService,SchoolDisciplineApp.Application.Services.Interfaces.IAttendanceService)">
             <summary>
             Initializes a new instance of the <see cref="T:SchoolDisciplineApp.API.Controllers.StudentController"/> class.
             </summary>
             <param name="studentService">The service responsible for handling student operations.</param>
+            <param name="attendanceService">The service responsible for managing attendance records.</param>
         </member>
         <member name="M:SchoolDisciplineApp.API.Controllers.StudentController.GetAll(System.Nullable{System.Int32})">
             <summary>

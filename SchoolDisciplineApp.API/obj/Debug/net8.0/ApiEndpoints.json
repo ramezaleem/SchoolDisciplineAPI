@@ -143,6 +143,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "SchoolDisciplineApp.API.Controllers.AttendanceController",
+    "Method": "UpdateMultiple",
+    "RelativePath": "api/Attendance/update-multiple",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dtos",
+        "Type": "System.Collections.Generic.List\u00601[[SchoolDisciplineApp.Application.DTOs.AttendanceRecordDto, SchoolDisciplineApp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SchoolDisciplineApp.API.Controllers.BehaviorController",
     "Method": "GetAll",
     "RelativePath": "api/Behavior",

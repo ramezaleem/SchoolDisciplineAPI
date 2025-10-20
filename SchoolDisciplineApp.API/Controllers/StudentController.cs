@@ -12,14 +12,17 @@ namespace SchoolDisciplineApp.API.Controllers
     public class StudentController : ControllerBase
     {
         private readonly IStudentService _studentService;
+        private readonly IAttendanceService _attendanceService;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="StudentController"/> class.
         /// </summary>
         /// <param name="studentService">The service responsible for handling student operations.</param>
-        public StudentController ( IStudentService studentService )
+        /// <param name="attendanceService">The service responsible for managing attendance records.</param>
+        public StudentController ( IStudentService studentService, IAttendanceService attendanceService )
         {
             _studentService = studentService;
+            _attendanceService = attendanceService;
         }
 
         /// <summary>
@@ -94,7 +97,7 @@ namespace SchoolDisciplineApp.API.Controllers
                 {
                     Name = dto.Name,
                     ClassId = dto.ClassId,
-                    RollNumber = ""  // إذا تريد لاحقاً إضافة رقم الجلوس خليه اختيارياً
+                    RollNumber = ""
                 };
 
                 await _studentService.AddAsync(student);
@@ -113,7 +116,6 @@ namespace SchoolDisciplineApp.API.Controllers
                 students = addedStudents
             });
         }
-
 
         /// <summary>
         /// Imports multiple students in bulk.
@@ -153,8 +155,6 @@ namespace SchoolDisciplineApp.API.Controllers
             return Ok(new { message = $"تم استيراد {dtos.Count()} طالباً بنجاح." });
         }
 
-
-
         /// <summary>
         /// Updates an existing student's information.
         /// </summary>
@@ -193,8 +193,21 @@ namespace SchoolDisciplineApp.API.Controllers
             if (existingStudent == null)
                 return NotFound(new { message = $"لم يتم العثور على الطالب بالمعرّف {id}." });
 
+            var attendanceRecords = await _attendanceService.GetByStudentIdAsync(id);
+            if (attendanceRecords != null && attendanceRecords.Any())
+            {
+                foreach (var record in attendanceRecords)
+                {
+                    await _attendanceService.DeleteAsync(record.Id);
+                }
+            }
+
             await _studentService.DeleteAsync(id);
+
             return Ok(new { message = "تم حذف الطالب بنجاح." });
         }
+
+
+
     }
 }

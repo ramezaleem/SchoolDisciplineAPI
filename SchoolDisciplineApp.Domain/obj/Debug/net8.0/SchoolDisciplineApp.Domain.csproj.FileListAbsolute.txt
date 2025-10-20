@@ -9,3 +9,4 @@ E:\SchoolDisciplineApp\SchoolDisciplineApp.Domain\obj\Debug\net8.0\SchoolDiscipl
 E:\SchoolDisciplineApp\SchoolDisciplineApp.Domain\obj\Debug\net8.0\refint\SchoolDisciplineApp.Domain.dll
 E:\SchoolDisciplineApp\SchoolDisciplineApp.Domain\obj\Debug\net8.0\SchoolDisciplineApp.Domain.pdb
 E:\SchoolDisciplineApp\SchoolDisciplineApp.Domain\obj\Debug\net8.0\ref\SchoolDisciplineApp.Domain.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.Domain\obj\Debug\net8.0\SchoolDisciplineApp.Domain.sourcelink.json
