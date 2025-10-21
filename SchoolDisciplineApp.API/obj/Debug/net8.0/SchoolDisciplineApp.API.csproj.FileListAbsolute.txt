@@ -178,3 +178,11 @@ E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Debug\net8.0\SchoolDiscipline
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Debug\net8.0\ref\SchoolDisciplineApp.API.dll
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Debug\net8.0\SchoolDisciplineApp.API.sourcelink.json
+E:\SchoolDisciplineApp\SchoolDisciplineApp.API\bin\Debug\net8.0\EPPlus.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.API\bin\Debug\net8.0\EPPlus.Interfaces.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.API\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.API\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.API\bin\Debug\net8.0\Microsoft.IO.RecyclableMemoryStream.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.API\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.API\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.API\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll

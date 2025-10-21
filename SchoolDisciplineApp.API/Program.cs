@@ -31,6 +31,8 @@ namespace SchoolDisciplineApp.API
             builder.Services.AddScoped<IBehaviorService, BehaviorService>();
             builder.Services.AddScoped<IAttendanceService, AttendanceService>();
             builder.Services.AddScoped<IReportService, ReportService>();
+            builder.Services.AddScoped<IExcelImportService, ExcelImportService>();
+
 
             builder.Services.AddControllers();
 

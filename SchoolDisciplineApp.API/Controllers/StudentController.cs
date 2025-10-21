@@ -13,16 +13,19 @@ namespace SchoolDisciplineApp.API.Controllers
     {
         private readonly IStudentService _studentService;
         private readonly IAttendanceService _attendanceService;
+        private readonly IExcelImportService _excelImportService;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="StudentController"/> class.
         /// </summary>
         /// <param name="studentService">The service responsible for handling student operations.</param>
         /// <param name="attendanceService">The service responsible for managing attendance records.</param>
-        public StudentController ( IStudentService studentService, IAttendanceService attendanceService )
+        /// <param name="excelImportService">The service responsible for processing Excel file imports.</param>
+        public StudentController ( IStudentService studentService, IAttendanceService attendanceService, IExcelImportService excelImportService )
         {
             _studentService = studentService;
             _attendanceService = attendanceService;
+            _excelImportService = excelImportService;
         }
 
         /// <summary>
@@ -178,6 +181,29 @@ namespace SchoolDisciplineApp.API.Controllers
 
             await _studentService.UpdateAsync(existingStudent);
             return Ok(new { message = "تم تحديث بيانات الطالب بنجاح." });
+        }
+
+        /// <summary>
+        /// Uploads and processes multiple Excel files containing student data.
+        /// </summary>
+        /// <param name="files">A list of Excel files to be uploaded and processed.</param>
+        /// <response code="200">Files processed and data imported successfully.</response>
+        /// <response code="400">If no files are provided for upload.</response>
+        [HttpPost("upload-excel-files")]
+        public async Task<IActionResult> UploadExcelFiles ( List<IFormFile> files )
+        {
+            if (files == null || !files.Any())
+                return BadRequest("لا توجد ملفات للرفع.");
+
+            foreach (var file in files)
+            {
+                if (file.Length > 0)
+                {
+                    using var stream = file.OpenReadStream();
+                    await _excelImportService.ProcessExcelFileAsync(stream);
+                }
+            }
+            return Ok("تم استيراد الملفات بنجاح.");
         }
 
         /// <summary>

@@ -163,11 +163,13 @@
             Manages class-related operations such as retrieving, adding, updating, and deleting classes.
             </summary>
         </member>
-        <member name="M:SchoolDisciplineApp.API.Controllers.ClassController.#ctor(SchoolDisciplineApp.Application.Services.Interfaces.IClassService)">
+        <member name="M:SchoolDisciplineApp.API.Controllers.ClassController.#ctor(SchoolDisciplineApp.Application.Services.Interfaces.IClassService,SchoolDisciplineApp.Application.Services.Interfaces.IStudentService,SchoolDisciplineApp.Application.Services.Interfaces.IAttendanceService)">
             <summary>
             Initializes a new instance of the <see cref="T:SchoolDisciplineApp.API.Controllers.ClassController"/> class.
             </summary>
             <param name="classService">The service responsible for handling class operations.</param>
+            <param name="studentService">The service responsible for handling student operations related to classes.</param>
+            <param name="attendanceService">The service responsible for managing attendance records related to students in classes.</param>
         </member>
         <member name="M:SchoolDisciplineApp.API.Controllers.ClassController.GetAll">
             <summary>

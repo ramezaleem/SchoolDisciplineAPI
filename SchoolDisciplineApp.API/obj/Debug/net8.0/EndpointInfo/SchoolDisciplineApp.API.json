@@ -1127,6 +1127,45 @@
           }
         }
       }
+    },
+    "/api/Student/upload-excel-files": {
+      "post": {
+        "tags": [
+          "Student"
+        ],
+        "summary": "Uploads and processes multiple Excel files containing student data.",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "files": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  }
+                }
+              },
+              "encoding": {
+                "files": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Files processed and data imported successfully."
+          },
+          "400": {
+            "description": "If no files are provided for upload."
+          }
+        }
+      }
     }
   },
   "components": {

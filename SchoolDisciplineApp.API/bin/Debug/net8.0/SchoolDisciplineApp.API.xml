@@ -268,12 +268,13 @@
             Manages student-related operations such as retrieving, adding, updating, and deleting students.
             </summary>
         </member>
-        <member name="M:SchoolDisciplineApp.API.Controllers.StudentController.#ctor(SchoolDisciplineApp.Application.Services.Interfaces.IStudentService,SchoolDisciplineApp.Application.Services.Interfaces.IAttendanceService)">
+        <member name="M:SchoolDisciplineApp.API.Controllers.StudentController.#ctor(SchoolDisciplineApp.Application.Services.Interfaces.IStudentService,SchoolDisciplineApp.Application.Services.Interfaces.IAttendanceService,SchoolDisciplineApp.Application.Services.Interfaces.IExcelImportService)">
             <summary>
             Initializes a new instance of the <see cref="T:SchoolDisciplineApp.API.Controllers.StudentController"/> class.
             </summary>
             <param name="studentService">The service responsible for handling student operations.</param>
             <param name="attendanceService">The service responsible for managing attendance records.</param>
+            <param name="excelImportService">The service responsible for processing Excel file imports.</param>
         </member>
         <member name="M:SchoolDisciplineApp.API.Controllers.StudentController.GetAll(System.Nullable{System.Int32})">
             <summary>
@@ -327,6 +328,14 @@
             <response code="204">Student updated successfully.</response>
             <response code="400">If the input data is invalid.</response>
             <response code="404">If no student is found with the given ID.</response>
+        </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.StudentController.UploadExcelFiles(System.Collections.Generic.List{Microsoft.AspNetCore.Http.IFormFile})">
+            <summary>
+            Uploads and processes multiple Excel files containing student data.
+            </summary>
+            <param name="files">A list of Excel files to be uploaded and processed.</param>
+            <response code="200">Files processed and data imported successfully.</response>
+            <response code="400">If no files are provided for upload.</response>
         </member>
         <member name="M:SchoolDisciplineApp.API.Controllers.StudentController.Delete(System.Int32)">
             <summary>
