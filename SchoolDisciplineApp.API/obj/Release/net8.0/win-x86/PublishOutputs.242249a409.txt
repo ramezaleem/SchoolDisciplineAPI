@@ -6,6 +6,8 @@ E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\SchoolDisciplineApp.API.pdb
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\Azure.Core.dll
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\Azure.Identity.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\EPPlus.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\EPPlus.Interfaces.dll
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\Microsoft.Bcl.AsyncInterfaces.dll
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\Microsoft.Data.SqlClient.dll
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\Microsoft.EntityFrameworkCore.dll
@@ -15,6 +17,8 @@ E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\Microsoft.Extensions.Caching.Abstractions.dll
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\Microsoft.Extensions.Caching.Memory.dll
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\Microsoft.Extensions.Configuration.FileExtensions.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\Microsoft.Extensions.Configuration.Json.dll
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\Microsoft.Extensions.DependencyInjection.dll
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\Microsoft.Extensions.Logging.dll
@@ -29,6 +33,7 @@ E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\Microsoft.IdentityModel.Protocols.dll
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\Microsoft.IdentityModel.Tokens.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\Microsoft.IO.RecyclableMemoryStream.dll
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\Microsoft.OpenApi.dll
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\Microsoft.SqlServer.Server.dll
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\Microsoft.Win32.SystemEvents.dll
@@ -44,7 +49,9 @@ E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\System.IO.Pipelines.dll
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\System.Memory.Data.dll
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\System.Runtime.Caching.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\System.Security.Cryptography.Pkcs.dll
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\System.Security.Cryptography.ProtectedData.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\System.Security.Cryptography.Xml.dll
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\System.Security.Permissions.dll
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\System.Text.Encodings.Web.dll
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\PubTmp\Out\System.Text.Json.dll

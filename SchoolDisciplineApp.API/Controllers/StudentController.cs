@@ -14,6 +14,7 @@ namespace SchoolDisciplineApp.API.Controllers
         private readonly IStudentService _studentService;
         private readonly IAttendanceService _attendanceService;
         private readonly IExcelImportService _excelImportService;
+        private readonly IClassService _classService;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="StudentController"/> class.
@@ -21,12 +22,19 @@ namespace SchoolDisciplineApp.API.Controllers
         /// <param name="studentService">The service responsible for handling student operations.</param>
         /// <param name="attendanceService">The service responsible for managing attendance records.</param>
         /// <param name="excelImportService">The service responsible for processing Excel file imports.</param>
-        public StudentController ( IStudentService studentService, IAttendanceService attendanceService, IExcelImportService excelImportService )
+        /// <param name="classService">The service responsible for managing class operations.</param>
+        public StudentController (
+            IStudentService studentService,
+            IAttendanceService attendanceService,
+            IExcelImportService excelImportService,
+            IClassService classService )
         {
             _studentService = studentService;
             _attendanceService = attendanceService;
             _excelImportService = excelImportService;
+            _classService = classService;
         }
+
 
         /// <summary>
         /// Retrieves all students from the system or filters by class if classId is provided.
@@ -82,7 +90,7 @@ namespace SchoolDisciplineApp.API.Controllers
         /// <param name="dtos">Single student DTO or a list of student DTOs.</param>
         /// <returns>Result of the addition operation.</returns>
         /// <response code="201">Student(s) added successfully.</response>
-        /// <response code="400">If the input data is invalid.</response>
+        /// <response code="400">If the input data is invalid or referenced class does not exist.</response>
         [HttpPost]
         public async Task<IActionResult> Add ( [FromBody] List<CreateStudentDto> dtos )
         {
@@ -96,6 +104,13 @@ namespace SchoolDisciplineApp.API.Controllers
                 if (!TryValidateModel(dto))
                     return BadRequest(new { message = $"بيانات الطالب {dto.Name} غير صحيحة." });
 
+                // تحقق من وجود الصف
+                var classExists = await _classService.GetByIdAsync(dto.ClassId);
+                if (classExists == null)
+                {
+                    return BadRequest(new { message = $"الصف الذي يحمل المعرف {dto.ClassId} غير موجود." });
+                }
+
                 var student = new Student
                 {
                     Name = dto.Name,
@@ -103,13 +118,13 @@ namespace SchoolDisciplineApp.API.Controllers
                     RollNumber = ""
                 };
 
-                await _studentService.AddAsync(student);
+                var createdStudent = await _studentService.AddAsync(student);
 
                 addedStudents.Add(new StudentDto
                 {
-                    Id = student.Id,
-                    Name = student.Name,
-                    ClassId = student.ClassId,
+                    Id = createdStudent.Id,
+                    Name = createdStudent.Name,
+                    ClassId = createdStudent.ClassId
                 });
             }
 
@@ -119,6 +134,7 @@ namespace SchoolDisciplineApp.API.Controllers
                 students = addedStudents
             });
         }
+
 
         /// <summary>
         /// Imports multiple students in bulk.

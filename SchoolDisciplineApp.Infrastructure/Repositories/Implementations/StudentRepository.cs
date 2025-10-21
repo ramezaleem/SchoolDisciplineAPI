@@ -33,10 +33,13 @@ namespace SchoolDisciplineApp.Infrastructure.Repositories
                 .ToListAsync();
         }
 
-        public async Task AddAsync ( Student student )
+        public async Task<Student> AddAsync ( Student student )
         {
-            await _context.Students.AddAsync(student);
+            var entry = await _context.Students.AddAsync(student);
+            await _context.SaveChangesAsync();
+            return entry.Entity;
         }
+
 
         public async Task SaveChangesAsync ()
         {

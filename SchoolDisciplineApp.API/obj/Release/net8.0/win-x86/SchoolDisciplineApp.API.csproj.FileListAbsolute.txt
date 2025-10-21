@@ -166,3 +166,10 @@ E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\School
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\SchoolDisciplineApp.API.genruntimeconfig.cache
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\ref\SchoolDisciplineApp.API.dll
 E:\SchoolDisciplineApp\SchoolDisciplineApp.API\obj\Release\net8.0\win-x86\SchoolDisciplineApp.API.sourcelink.json
+E:\SchoolDisciplineApp\SchoolDisciplineApp.API\bin\Release\net8.0\win-x86\EPPlus.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.API\bin\Release\net8.0\win-x86\EPPlus.Interfaces.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.API\bin\Release\net8.0\win-x86\Microsoft.Extensions.Configuration.FileExtensions.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.API\bin\Release\net8.0\win-x86\Microsoft.Extensions.Configuration.Json.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.API\bin\Release\net8.0\win-x86\Microsoft.IO.RecyclableMemoryStream.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.API\bin\Release\net8.0\win-x86\System.Security.Cryptography.Pkcs.dll
+E:\SchoolDisciplineApp\SchoolDisciplineApp.API\bin\Release\net8.0\win-x86\System.Security.Cryptography.Xml.dll

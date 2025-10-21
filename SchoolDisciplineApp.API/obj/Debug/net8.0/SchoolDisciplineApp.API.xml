@@ -268,13 +268,14 @@
             Manages student-related operations such as retrieving, adding, updating, and deleting students.
             </summary>
         </member>
-        <member name="M:SchoolDisciplineApp.API.Controllers.StudentController.#ctor(SchoolDisciplineApp.Application.Services.Interfaces.IStudentService,SchoolDisciplineApp.Application.Services.Interfaces.IAttendanceService,SchoolDisciplineApp.Application.Services.Interfaces.IExcelImportService)">
+        <member name="M:SchoolDisciplineApp.API.Controllers.StudentController.#ctor(SchoolDisciplineApp.Application.Services.Interfaces.IStudentService,SchoolDisciplineApp.Application.Services.Interfaces.IAttendanceService,SchoolDisciplineApp.Application.Services.Interfaces.IExcelImportService,SchoolDisciplineApp.Application.Services.Interfaces.IClassService)">
             <summary>
             Initializes a new instance of the <see cref="T:SchoolDisciplineApp.API.Controllers.StudentController"/> class.
             </summary>
             <param name="studentService">The service responsible for handling student operations.</param>
             <param name="attendanceService">The service responsible for managing attendance records.</param>
             <param name="excelImportService">The service responsible for processing Excel file imports.</param>
+            <param name="classService">The service responsible for managing class operations.</param>
         </member>
         <member name="M:SchoolDisciplineApp.API.Controllers.StudentController.GetAll(System.Nullable{System.Int32})">
             <summary>
@@ -300,7 +301,7 @@
             <param name="dtos">Single student DTO or a list of student DTOs.</param>
             <returns>Result of the addition operation.</returns>
             <response code="201">Student(s) added successfully.</response>
-            <response code="400">If the input data is invalid.</response>
+            <response code="400">If the input data is invalid or referenced class does not exist.</response>
         </member>
         <member name="M:SchoolDisciplineApp.API.Controllers.StudentController.Import(System.Collections.Generic.IEnumerable{SchoolDisciplineApp.Application.DTOs.CreateStudentDto})">
             <summary>

@@ -6,7 +6,7 @@
         Task<Student?> GetByIdAsync ( int id );
         Task<IEnumerable<Student>> GetByClassIdAsync ( int classId );
 
-        Task AddAsync ( Student student );
+        Task<Student> AddAsync ( Student student );
         Task UpdateAsync ( Student student );
         Task DeleteAsync ( int id );
     }

@@ -968,7 +968,7 @@
             "description": "Student(s) added successfully."
           },
           "400": {
-            "description": "If the input data is invalid."
+            "description": "If the input data is invalid or referenced class does not exist."
           }
         }
       }

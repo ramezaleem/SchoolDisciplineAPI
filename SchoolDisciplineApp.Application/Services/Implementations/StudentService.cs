@@ -26,9 +26,9 @@ namespace SchoolDisciplineApp.Application.Services.Implementations
             return await _studentRepository.GetByClassIdAsync(classId);
         }
 
-        public async Task AddAsync ( Student student )
+        public async Task<Student> AddAsync ( Student student )
         {
-            await _studentRepository.AddAsync(student);
+            return await _studentRepository.AddAsync(student);
         }
 
         public async Task UpdateAsync ( Student student )
