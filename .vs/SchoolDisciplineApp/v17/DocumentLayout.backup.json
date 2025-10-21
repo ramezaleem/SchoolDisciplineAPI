@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "E:\\SchoolDisciplineApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{270D70AC-AD05-492C-AF61-8A2A5A5FAF0A}|SchoolDisciplineApp.API\\SchoolDisciplineApp.API.csproj|e:\\schooldisciplineapp\\schooldisciplineapp.api\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{270D70AC-AD05-492C-AF61-8A2A5A5FAF0A}|SchoolDisciplineApp.API\\SchoolDisciplineApp.API.csproj|solutionrelative:schooldisciplineapp.api\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{270D70AC-AD05-492C-AF61-8A2A5A5FAF0A}|SchoolDisciplineApp.API\\SchoolDisciplineApp.API.csproj|e:\\schooldisciplineapp\\schooldisciplineapp.api\\controllers\\classcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{270D70AC-AD05-492C-AF61-8A2A5A5FAF0A}|SchoolDisciplineApp.API\\SchoolDisciplineApp.API.csproj|solutionrelative:schooldisciplineapp.api\\controllers\\classcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C26E4D48-0B1E-4D15-BD63-F35475D4305A}|SchoolDisciplineApp.Application\\SchoolDisciplineApp.Application.csproj|e:\\schooldisciplineapp\\schooldisciplineapp.application\\services\\implementations\\classservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C26E4D48-0B1E-4D15-BD63-F35475D4305A}|SchoolDisciplineApp.Application\\SchoolDisciplineApp.Application.csproj|solutionrelative:schooldisciplineapp.application\\services\\implementations\\classservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,14 +47,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "StudentController.cs",
-              "DocumentMoniker": "E:\\SchoolDisciplineApp\\SchoolDisciplineApp.API\\Controllers\\StudentController.cs",
-              "RelativeDocumentMoniker": "SchoolDisciplineApp.API\\Controllers\\StudentController.cs",
-              "ToolTip": "E:\\SchoolDisciplineApp\\SchoolDisciplineApp.API\\Controllers\\StudentController.cs",
-              "RelativeToolTip": "SchoolDisciplineApp.API\\Controllers\\StudentController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAzAAAAAAAAAA==",
+              "Title": "ClassController.cs",
+              "DocumentMoniker": "E:\\SchoolDisciplineApp\\SchoolDisciplineApp.API\\Controllers\\ClassController.cs",
+              "RelativeDocumentMoniker": "SchoolDisciplineApp.API\\Controllers\\ClassController.cs",
+              "ToolTip": "E:\\SchoolDisciplineApp\\SchoolDisciplineApp.API\\Controllers\\ClassController.cs",
+              "RelativeToolTip": "SchoolDisciplineApp.API\\Controllers\\ClassController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T23:00:34.745Z",
+              "WhenOpened": "2025-10-21T00:02:55.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ClassService.cs",
+              "DocumentMoniker": "E:\\SchoolDisciplineApp\\SchoolDisciplineApp.Application\\Services\\Implementations\\ClassService.cs",
+              "RelativeDocumentMoniker": "SchoolDisciplineApp.Application\\Services\\Implementations\\ClassService.cs",
+              "ToolTip": "E:\\SchoolDisciplineApp\\SchoolDisciplineApp.Application\\Services\\Implementations\\ClassService.cs",
+              "RelativeToolTip": "SchoolDisciplineApp.Application\\Services\\Implementations\\ClassService.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAywA0AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T23:58:41.788Z",
               "EditorCaption": ""
             }
           ]

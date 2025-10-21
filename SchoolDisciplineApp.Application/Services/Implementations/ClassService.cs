@@ -1,5 +1,4 @@
 ﻿using SchoolDisciplineApp.Application.Services.Interfaces;
-using SchoolDisciplineApp.Domain.Entities;
 using SchoolDisciplineApp.Infrastructure.Repositories;
 
 namespace SchoolDisciplineApp.Application.Services.Implementations
@@ -7,10 +6,12 @@ namespace SchoolDisciplineApp.Application.Services.Implementations
     public class ClassService : IClassService
     {
         private readonly IClassRepository _classRepository;
+        private readonly IStudentRepository _studentRepository;
 
-        public ClassService ( IClassRepository classRepository )
+        public ClassService ( IClassRepository classRepository, IStudentRepository studentRepository )
         {
             _classRepository = classRepository;
+            _studentRepository = studentRepository;
         }
 
         public async Task<IEnumerable<SchoolClass>> GetAllAsync ()
@@ -22,6 +23,11 @@ namespace SchoolDisciplineApp.Application.Services.Implementations
         {
             return await _classRepository.GetByIdAsync(id);
         }
+        public async Task<IEnumerable<Student>> GetStudentsByClassIdAsync ( int classId )
+        {
+            return await _studentRepository.GetByClassIdAsync(classId);
+        }
+
 
         public async Task AddAsync ( SchoolClass schoolClass )
         {

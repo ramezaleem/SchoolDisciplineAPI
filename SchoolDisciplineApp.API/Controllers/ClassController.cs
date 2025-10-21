@@ -12,15 +12,22 @@ namespace SchoolDisciplineApp.API.Controllers
     public class ClassController : ControllerBase
     {
         private readonly IClassService _classService;
+        private readonly IStudentService _studentService;
+        private readonly IAttendanceService _attendanceService;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassController"/> class.
         /// </summary>
         /// <param name="classService">The service responsible for handling class operations.</param>
-        public ClassController ( IClassService classService )
+        /// <param name="studentService">The service responsible for handling student operations related to classes.</param>
+        /// <param name="attendanceService">The service responsible for managing attendance records related to students in classes.</param>
+        public ClassController ( IClassService classService, IStudentService studentService, IAttendanceService attendanceService )
         {
             _classService = classService;
+            _studentService = studentService;
+            _attendanceService = attendanceService;
         }
+
 
         /// <summary>
         /// Retrieves all school classes.
@@ -37,7 +44,7 @@ namespace SchoolDisciplineApp.API.Controllers
                 AcademicTerm = x.AcademicTerm,
                 ClassName = x.ClassName,
                 StudentCount = x.StudentCount,
-                Director = x.Director  // تحويل الخاصية الجديدة
+                Director = x.Director
             });
 
             return Ok(dtos);
@@ -63,7 +70,7 @@ namespace SchoolDisciplineApp.API.Controllers
                 AcademicTerm = schoolClass.AcademicTerm,
                 ClassName = schoolClass.ClassName,
                 StudentCount = schoolClass.StudentCount,
-                Director = schoolClass.Director  // تحويل الخاصية الجديدة
+                Director = schoolClass.Director
             };
 
             return Ok(dto);
@@ -87,7 +94,7 @@ namespace SchoolDisciplineApp.API.Controllers
                 AcademicTerm = dto.AcademicTerm,
                 ClassName = dto.ClassName,
                 StudentCount = dto.StudentCount,
-                Director = dto.Director  // تحويل الخاصية الجديدة
+                Director = dto.Director
             };
 
             await _classService.AddAsync(schoolClass);
@@ -119,7 +126,7 @@ namespace SchoolDisciplineApp.API.Controllers
             existingClass.AcademicTerm = dto.AcademicTerm;
             existingClass.ClassName = dto.ClassName;
             existingClass.StudentCount = dto.StudentCount;
-            existingClass.Director = dto.Director; // تحديث الخاصية الجديدة
+            existingClass.Director = dto.Director;
 
             await _classService.UpdateAsync(existingClass);
             return Ok(new { message = "تم تحديث بيانات الصف الدراسي بنجاح." });
@@ -138,8 +145,30 @@ namespace SchoolDisciplineApp.API.Controllers
             if (existingClass == null)
                 return NotFound(new { message = $"لم يتم العثور على الصف بالمعرّف {id}." });
 
+            var relatedStudents = await _classService.GetStudentsByClassIdAsync(id);
+
+            if (relatedStudents != null && relatedStudents.Any())
+            {
+                foreach (var student in relatedStudents)
+                {
+                    var attendanceRecords = await _attendanceService.GetByStudentIdAsync(student.Id);
+                    if (attendanceRecords != null && attendanceRecords.Any())
+                    {
+                        foreach (var record in attendanceRecords)
+                        {
+                            await _attendanceService.DeleteAsync(record.Id);
+                        }
+                    }
+
+                    await _studentService.DeleteAsync(student.Id);
+                }
+            }
+
             await _classService.DeleteAsync(id);
-            return Ok(new { message = "تم حذف الصف الدراسي بنجاح." });
+
+            return Ok(new { message = "تم حذف الصف وجميع الطلاب وسجلات الحضور المرتبطة بهم بنجاح." });
         }
+
+
     }
 }
