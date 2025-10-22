@@ -39,5 +39,6 @@ namespace SchoolDisciplineApp.Infrastructure.Repositories
         {
             return await _dbContext.Reports.ToListAsync();
         }
+
     }
 }

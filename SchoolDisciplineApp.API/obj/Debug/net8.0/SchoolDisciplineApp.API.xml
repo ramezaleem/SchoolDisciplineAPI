@@ -64,6 +64,15 @@
             <param name="isExcused">Optional filter for excused or unexcused absence (true/false/null).</param>
             <returns>Count of absence days.</returns>
         </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.AttendanceController.GetAbsenceStatsByClassAndMonth(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Retrieves number of students in a class who were absent 3, 5, and 10 days or more in a specified month and year.
+            </summary>
+            <param name="classId">Class ID.</param>
+            <param name="year">Year.</param>
+            <param name="month">Month (1-12).</param>
+            <returns>Absence statistics summary.</returns>
+        </member>
         <member name="M:SchoolDisciplineApp.API.Controllers.AttendanceController.Add(SchoolDisciplineApp.Application.DTOs.AttendanceRecordDto)">
             <summary>
             Adds a new attendance record.

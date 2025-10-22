@@ -61,6 +61,10 @@ namespace SchoolDisciplineApp.Application.Services.Implementations
         {
             return await _attendanceRepository.GetByStudentAbsencesAsync(studentId, isAbsent, isExcused);
         }
+        public async Task<Dictionary<string, int>> GetAbsenceStatsByClassForMonthAsync ( int classId, int year, int month )
+        {
+            return await _attendanceRepository.GetAbsenceStatsByClassForMonthAsync(classId, year, month);
+        }
 
         public async Task<int> GetAbsenceDaysCountAsync ( int studentId, DateTime startDate, DateTime endDate, bool? isExcused = null )
         {

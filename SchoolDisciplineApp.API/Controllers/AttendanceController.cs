@@ -182,6 +182,28 @@ namespace SchoolDisciplineApp.API.Controllers
             });
         }
 
+        /// <summary>
+        /// Retrieves number of students in a class who were absent 3, 5, and 10 days or more in a specified month and year.
+        /// </summary>
+        /// <param name="classId">Class ID.</param>
+        /// <param name="year">Year.</param>
+        /// <param name="month">Month (1-12).</param>
+        /// <returns>Absence statistics summary.</returns>
+        [HttpGet("absence-stats/class/{classId}/month")]
+        public async Task<IActionResult> GetAbsenceStatsByClassAndMonth ( int classId, [FromQuery] int year, [FromQuery] int month )
+        {
+            if (month < 1 || month > 12)
+                return BadRequest(new { message = "الشهر يجب أن يكون بين 1 و 12." });
+
+            var stats = await _attendanceService.GetAbsenceStatsByClassForMonthAsync(classId, year, month);
+
+            if (stats == null || !stats.Any())
+                return NotFound(new { message = $"لا توجد بيانات غياب للفصل {classId} في الشهر {month}/{year}." });
+
+            return Ok(stats);
+        }
+
+
 
         /// <summary>
         /// Adds a new attendance record.

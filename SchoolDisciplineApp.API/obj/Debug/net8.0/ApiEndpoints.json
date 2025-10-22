@@ -138,6 +138,32 @@
   },
   {
     "ContainingType": "SchoolDisciplineApp.API.Controllers.AttendanceController",
+    "Method": "GetAbsenceStatsByClassAndMonth",
+    "RelativePath": "api/Attendance/absence-stats/class/{classId}/month",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "classId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "year",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "month",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolDisciplineApp.API.Controllers.AttendanceController",
     "Method": "GetAttendanceByClassAndDate",
     "RelativePath": "api/Attendance/class-attendance-by-date",
     "HttpMethod": "GET",

@@ -95,5 +95,34 @@ namespace SchoolDisciplineApp.Infrastructure.Repositories
 
             return await query.ToListAsync();
         }
+        public async Task<Dictionary<string, int>> GetAbsenceStatsByClassForMonthAsync ( int classId, int year, int month )
+        {
+            var startDate = new DateTime(year, month, 1);
+            var endDate = startDate.AddMonths(1).AddDays(-1);
+
+            var query = _dbContext.AttendanceRecords
+                .Where(a => a.ClassId == classId &&
+                            a.IsAbsent == true &&
+                            a.Date >= startDate &&
+                            a.Date <= endDate)
+                .GroupBy(a => a.StudentId)
+                .Select(g => new { StudentId = g.Key, AbsenceCount = g.Count() });
+
+            var grouped = await query.ToListAsync();
+
+            int count10 = grouped.Count(x => x.AbsenceCount >= 10);
+            int count5 = grouped.Count(x => x.AbsenceCount >= 5);
+            int count3 = grouped.Count(x => x.AbsenceCount >= 3);
+
+            return new Dictionary<string, int>
+            {
+                { "10DaysOrMore", count10 },
+                { "5DaysOrMore", count5 },
+                { "3DaysOrMore", count3 }
+            };
+        }
+
+
+
     }
 }

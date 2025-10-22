@@ -294,6 +294,49 @@
         }
       }
     },
+    "/api/Attendance/absence-stats/class/{classId}/month": {
+      "get": {
+        "tags": [
+          "Attendance"
+        ],
+        "summary": "Retrieves number of students in a class who were absent 3, 5, and 10 days or more in a specified month and year.",
+        "parameters": [
+          {
+            "name": "classId",
+            "in": "path",
+            "description": "Class ID.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "year",
+            "in": "query",
+            "description": "Year.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "month",
+            "in": "query",
+            "description": "Month (1-12).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Attendance/update-multiple": {
       "put": {
         "tags": [
