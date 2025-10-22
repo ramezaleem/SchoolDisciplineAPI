@@ -6,5 +6,6 @@ public class AttendanceRecordDto
     public int ClassId { get; set; }
     public DateTime Date { get; set; }
     public bool IsAbsent { get; set; }
+    public bool? IsExcused { get; set; }
 }
 

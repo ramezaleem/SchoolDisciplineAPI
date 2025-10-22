@@ -14,11 +14,6 @@ namespace SchoolDisciplineApp.Application.Services.Implementations
             _attendanceRepository = attendanceRepository;
         }
 
-        /// <summary>
-        /// Retrieves all attendance records, optionally filtered by class and month.
-        /// </summary>
-        /// <param name="classId">Optional class ID to filter records.</param>
-        /// <param name="month">Optional month (1-12) to filter records.</param>
         public async Task<IEnumerable<AttendanceRecord>> GetAllAsync ( int? classId = null, int? month = null )
         {
             var query = _attendanceRepository.GetAllQueryable();
@@ -41,6 +36,7 @@ namespace SchoolDisciplineApp.Application.Services.Implementations
         {
             return await _attendanceRepository.GetByStudentIdAsync(studentId);
         }
+
         public async Task<IEnumerable<AttendanceRecord>> GetForClassByDateAsync ( int classId, DateTime date )
         {
             return await _attendanceRepository.GetForClassByDateAsync(classId, date);
@@ -61,6 +57,19 @@ namespace SchoolDisciplineApp.Application.Services.Implementations
             await _attendanceRepository.DeleteAsync(id);
         }
 
+        public async Task<IEnumerable<AttendanceRecord>> GetByStudentAbsencesAsync ( int studentId, bool? isAbsent = null, bool? isExcused = null )
+        {
+            return await _attendanceRepository.GetByStudentAbsencesAsync(studentId, isAbsent, isExcused);
+        }
 
+        public async Task<int> GetAbsenceDaysCountAsync ( int studentId, DateTime startDate, DateTime endDate, bool? isExcused = null )
+        {
+            var absences = await _attendanceRepository.GetByStudentAbsencesAsync(
+                studentId,
+                isAbsent: true,
+                isExcused: isExcused);
+
+            return absences.Count(a => a.Date.Date >= startDate.Date && a.Date.Date <= endDate.Date);
+        }
     }
 }

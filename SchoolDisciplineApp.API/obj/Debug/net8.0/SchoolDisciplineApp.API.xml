@@ -53,6 +53,17 @@
             <response code="200">Returns the list of students with attendance status.</response>
             <response code="404">If no students found for the specified class.</response>
         </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.AttendanceController.GetAbsenceCount(System.Int32,System.DateTime,System.DateTime,System.Nullable{System.Boolean})">
+            <summary>
+            Gets the count of absence days for a student within a specified date range,
+            optionally filtered by excused or unexcused absence.
+            </summary>
+            <param name="studentId">The ID of the student.</param>
+            <param name="startDate">Start date of the range.</param>
+            <param name="endDate">End date of the range.</param>
+            <param name="isExcused">Optional filter for excused or unexcused absence (true/false/null).</param>
+            <returns>Count of absence days.</returns>
+        </member>
         <member name="M:SchoolDisciplineApp.API.Controllers.AttendanceController.Add(SchoolDisciplineApp.Application.DTOs.AttendanceRecordDto)">
             <summary>
             Adds a new attendance record.

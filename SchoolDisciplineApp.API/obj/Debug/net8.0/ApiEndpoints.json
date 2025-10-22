@@ -107,6 +107,37 @@
   },
   {
     "ContainingType": "SchoolDisciplineApp.API.Controllers.AttendanceController",
+    "Method": "GetAbsenceCount",
+    "RelativePath": "api/Attendance/absence-count/{studentId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "studentId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "startDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "endDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "isExcused",
+        "Type": "System.Nullable\u00601[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolDisciplineApp.API.Controllers.AttendanceController",
     "Method": "GetAttendanceByClassAndDate",
     "RelativePath": "api/Attendance/class-attendance-by-date",
     "HttpMethod": "GET",

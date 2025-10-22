@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SchoolDisciplineApp.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+286439423c68ad727de74f9de654b772118f13ef")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6122b50c9e9de98aa97158f47ebf45ee4e3ab669")]
 [assembly: System.Reflection.AssemblyProductAttribute("SchoolDisciplineApp.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SchoolDisciplineApp.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

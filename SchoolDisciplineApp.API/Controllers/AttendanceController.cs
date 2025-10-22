@@ -51,7 +51,8 @@ namespace SchoolDisciplineApp.API.Controllers
                 StudentId = x.StudentId,
                 ClassId = x.ClassId,
                 Date = x.Date,
-                IsAbsent = x.IsAbsent
+                IsAbsent = x.IsAbsent,
+                IsExcused = x.IsExcused
             });
 
             return Ok(dtos);
@@ -77,7 +78,8 @@ namespace SchoolDisciplineApp.API.Controllers
                 StudentId = record.StudentId,
                 ClassId = record.ClassId,
                 Date = record.Date,
-                IsAbsent = record.IsAbsent
+                IsAbsent = record.IsAbsent,
+                IsExcused = record.IsExcused
             };
 
             return Ok(dto);
@@ -103,7 +105,8 @@ namespace SchoolDisciplineApp.API.Controllers
                 StudentId = x.StudentId,
                 ClassId = x.ClassId,
                 Date = x.Date,
-                IsAbsent = x.IsAbsent
+                IsAbsent = x.IsAbsent,
+                IsExcused = x.IsExcused
             });
 
             return Ok(dtos);
@@ -141,11 +144,44 @@ namespace SchoolDisciplineApp.API.Controllers
                     classId = student.ClassId,
                     date = date,
                     isAbsent = att?.IsAbsent ?? false,
+                    IsExcused = att?.IsExcused
                 };
             });
 
             return Ok(result);
         }
+
+        /// <summary>
+        /// Gets the count of absence days for a student within a specified date range,
+        /// optionally filtered by excused or unexcused absence.
+        /// </summary>
+        /// <param name="studentId">The ID of the student.</param>
+        /// <param name="startDate">Start date of the range.</param>
+        /// <param name="endDate">End date of the range.</param>
+        /// <param name="isExcused">Optional filter for excused or unexcused absence (true/false/null).</param>
+        /// <returns>Count of absence days.</returns>
+        [HttpGet("absence-count/{studentId}")]
+        public async Task<IActionResult> GetAbsenceCount (
+            int studentId,
+            [FromQuery] DateTime startDate,
+            [FromQuery] DateTime endDate,
+            [FromQuery] bool? isExcused = null )
+        {
+            if (startDate > endDate)
+                return BadRequest(new { message = "تاريخ البداية يجب أن يكون قبل تاريخ النهاية." });
+
+            var count = await _attendanceService.GetAbsenceDaysCountAsync(studentId, startDate, endDate, isExcused);
+
+            return Ok(new
+            {
+                StudentId = studentId,
+                StartDate = startDate,
+                EndDate = endDate,
+                IsExcused = isExcused,
+                AbsenceDaysCount = count
+            });
+        }
+
 
         /// <summary>
         /// Adds a new attendance record.
@@ -165,7 +201,8 @@ namespace SchoolDisciplineApp.API.Controllers
                 StudentId = dto.StudentId,
                 ClassId = dto.ClassId,
                 Date = dto.Date,
-                IsAbsent = dto.IsAbsent
+                IsAbsent = dto.IsAbsent,
+                IsExcused = dto.IsExcused
             };
 
             await _attendanceService.AddAsync(record);
@@ -202,12 +239,12 @@ namespace SchoolDisciplineApp.API.Controllers
             existingRecord.ClassId = dto.ClassId;
             existingRecord.Date = dto.Date;
             existingRecord.IsAbsent = dto.IsAbsent;
+            existingRecord.IsExcused = dto.IsExcused;
 
             await _attendanceService.UpdateAsync(existingRecord);
 
             return Ok(new { message = "تم تحديث سجل الحضور بنجاح." });
         }
-
 
         /// <summary>
         /// Updates multiple attendance records at once.
@@ -235,6 +272,7 @@ namespace SchoolDisciplineApp.API.Controllers
                 existingRecord.ClassId = dto.ClassId;
                 existingRecord.Date = dto.Date;
                 existingRecord.IsAbsent = dto.IsAbsent;
+                existingRecord.IsExcused = dto.IsExcused;
 
                 await _attendanceService.UpdateAsync(existingRecord);
                 updatedCount++;
@@ -245,7 +283,6 @@ namespace SchoolDisciplineApp.API.Controllers
 
             return Ok(new { message = $"تم تحديث {updatedCount} سجل حضور بنجاح." });
         }
-
 
         /// <summary>
         /// Deletes an attendance record by its ID.

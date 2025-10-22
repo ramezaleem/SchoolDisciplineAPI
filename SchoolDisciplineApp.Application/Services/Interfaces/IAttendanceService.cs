@@ -8,8 +8,13 @@ namespace SchoolDisciplineApp.Application.Services.Interfaces
         Task<AttendanceRecord?> GetByIdAsync ( int id );
         Task<IEnumerable<AttendanceRecord>> GetByStudentIdAsync ( int studentId );
         Task<IEnumerable<AttendanceRecord>> GetForClassByDateAsync ( int classId, DateTime date );
+
         Task AddAsync ( AttendanceRecord record );
         Task UpdateAsync ( AttendanceRecord record );
         Task DeleteAsync ( int id );
+
+        Task<IEnumerable<AttendanceRecord>> GetByStudentAbsencesAsync ( int studentId, bool? isAbsent = null, bool? isExcused = null );
+
+        Task<int> GetAbsenceDaysCountAsync ( int studentId, DateTime startDate, DateTime endDate, bool? isExcused = null );
     }
 }

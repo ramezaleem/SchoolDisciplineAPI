@@ -243,6 +243,57 @@
         }
       }
     },
+    "/api/Attendance/absence-count/{studentId}": {
+      "get": {
+        "tags": [
+          "Attendance"
+        ],
+        "summary": "Gets the count of absence days for a student within a specified date range,\r\noptionally filtered by excused or unexcused absence.",
+        "parameters": [
+          {
+            "name": "studentId",
+            "in": "path",
+            "description": "The ID of the student.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "description": "Start date of the range.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "description": "End date of the range.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "isExcused",
+            "in": "query",
+            "description": "Optional filter for excused or unexcused absence (true/false/null).",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Attendance/update-multiple": {
       "put": {
         "tags": [
@@ -1191,6 +1242,10 @@
           },
           "isAbsent": {
             "type": "boolean"
+          },
+          "isExcused": {
+            "type": "boolean",
+            "nullable": true
           }
         },
         "additionalProperties": false

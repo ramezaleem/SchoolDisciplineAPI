@@ -8,11 +8,11 @@ namespace SchoolDisciplineApp.Domain.Entities
 
         [Required(ErrorMessage = "يجب اختيار الطالب.")]
         [Range(1, int.MaxValue, ErrorMessage = "معرّف الطالب غير صالح.")]
-        public int StudentId { get; set; } // فقط Id
+        public int StudentId { get; set; }
 
         [Required(ErrorMessage = "يجب اختيار الصف الدراسي.")]
         [Range(1, int.MaxValue, ErrorMessage = "معرّف الصف الدراسي غير صالح.")]
-        public int ClassId { get; set; }  // فقط Id
+        public int ClassId { get; set; }
 
         [Required(ErrorMessage = "يجب تحديد تاريخ الحضور.")]
         [DataType(DataType.Date)]
@@ -20,15 +20,19 @@ namespace SchoolDisciplineApp.Domain.Entities
         public DateTime Date { get; set; }
 
         [Required(ErrorMessage = "يجب تحديد حالة الغياب.")]
-        public bool IsAbsent { get; set; }
+        public bool IsAbsent { get; set; }  // true = غائب، false = حاضر
 
-        public Student Student { get; set; } // EF Core يربطها تلقائياً
-        public SchoolClass Class { get; set; } // EF Core يربطها تلقائياً
+        [Required(ErrorMessage = "يجب تحديد إذا كان الغياب بعذر أو بدون عذر.")]
+        public bool? IsExcused { get; set; }  // true = بعذر، false = بدون عذر، null إذا لم يكن غائباً
+
+        public Student Student { get; set; }
+        public SchoolClass Class { get; set; }
 
         public static ValidationResult ValidateDate ( DateTime date, ValidationContext context )
         {
-            return date > DateTime.Today ? new ValidationResult("تاريخ الحضور لا يمكن أن يكون في المستقبل.") : ValidationResult.Success;
+            return date > DateTime.Today
+                ? new ValidationResult("تاريخ الحضور لا يمكن أن يكون في المستقبل.")
+                : ValidationResult.Success;
         }
     }
-
 }

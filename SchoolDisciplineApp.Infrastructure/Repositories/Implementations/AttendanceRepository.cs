@@ -37,6 +37,7 @@ namespace SchoolDisciplineApp.Infrastructure.Repositories
                 .Include(r => r.Class)
                 .ToListAsync();
         }
+
         public async Task<IEnumerable<AttendanceRecord>> GetForClassByDateAsync ( int classId, DateTime date )
         {
             var start = date.Date;
@@ -48,6 +49,7 @@ namespace SchoolDisciplineApp.Infrastructure.Repositories
                 .Include(a => a.Class)
                 .ToListAsync();
         }
+
         public IQueryable<AttendanceRecord> GetAllQueryable ()
         {
             return _dbContext.AttendanceRecords
@@ -78,7 +80,20 @@ namespace SchoolDisciplineApp.Infrastructure.Repositories
             }
         }
 
+        public async Task<IEnumerable<AttendanceRecord>> GetByStudentAbsencesAsync ( int studentId, bool? isAbsent = null, bool? isExcused = null )
+        {
+            var query = _dbContext.AttendanceRecords
+                .Where(r => r.StudentId == studentId)
+                .Include(r => r.Student)
+                .Include(r => r.Class)
+                .AsQueryable();
 
+            if (isAbsent.HasValue)
+                query = query.Where(r => r.IsAbsent == isAbsent.Value);
+            if (isExcused.HasValue)
+                query = query.Where(r => r.IsExcused == isExcused.Value);
 
+            return await query.ToListAsync();
+        }
     }
 }

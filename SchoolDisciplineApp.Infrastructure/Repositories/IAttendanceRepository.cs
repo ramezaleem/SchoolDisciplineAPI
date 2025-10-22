@@ -13,5 +13,7 @@ namespace SchoolDisciplineApp.Infrastructure.Repositories
         Task AddAsync ( AttendanceRecord record );
         Task UpdateAsync ( AttendanceRecord record );
         Task DeleteAsync ( int id );
+
+        Task<IEnumerable<AttendanceRecord>> GetByStudentAbsencesAsync ( int studentId, bool? isAbsent = null, bool? isExcused = null );
     }
 }

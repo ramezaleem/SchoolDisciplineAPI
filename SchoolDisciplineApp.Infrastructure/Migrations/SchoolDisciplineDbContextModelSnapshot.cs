@@ -70,6 +70,9 @@ namespace SchoolDisciplineApp.Infrastructure.Migrations
                     b.Property<bool>("IsAbsent")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsExcused")
+                        .HasColumnType("bit");
+
                     b.Property<int>("StudentId")
                         .HasColumnType("int");
 
