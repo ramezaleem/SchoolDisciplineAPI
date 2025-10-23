@@ -203,6 +203,27 @@ namespace SchoolDisciplineApp.API.Controllers
             return Ok(stats);
         }
 
+        /// <summary>
+        /// Retrieves list of students who have no absence in a given class during specified month and year.
+        /// </summary>
+        /// <param name="classId">Class ID</param>
+        /// <param name="year">Year</param>
+        /// <param name="month">Month (1-12)</param>
+        /// <returns>List of students with no absences</returns>
+        [HttpGet("students/no-absence")]
+        public async Task<IActionResult> GetStudentsWithNoAbsence ( int classId, [FromQuery] int year, [FromQuery] int month )
+        {
+            if (month < 1 || month > 12)
+                return BadRequest(new { message = "الشهر يجب أن يكون بين 1 و 12." });
+
+            var students = await _attendanceService.GetStudentsWithNoAbsenceInMonthAsync(classId, year, month);
+
+            if (students == null || !students.Any())
+                return NotFound(new { message = $"لا يوجد طلاب بدون غياب في الفصل {classId} ضمن الشهر {month}/{year}." });
+
+            var result = students.Select(s => new { s.Id, s.Name });
+            return Ok(result);
+        }
 
 
         /// <summary>

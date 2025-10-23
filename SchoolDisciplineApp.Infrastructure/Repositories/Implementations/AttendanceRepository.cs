@@ -122,6 +122,28 @@ namespace SchoolDisciplineApp.Infrastructure.Repositories
             };
         }
 
+        public async Task<List<Student>> GetStudentsWithNoAbsenceInMonthAsync ( int classId, int year, int month )
+        {
+            var startDate = new DateTime(year, month, 1);
+            var endDate = startDate.AddMonths(1).AddDays(-1);
+
+            var studentsInClass = await _dbContext.Students
+                .Where(s => s.ClassId == classId)
+                .ToListAsync();
+
+            var absentStudentIds = await _dbContext.AttendanceRecords
+                .Where(a => a.ClassId == classId &&
+                            a.IsAbsent == true &&
+                            a.Date >= startDate &&
+                            a.Date <= endDate)
+                .Select(a => a.StudentId)
+                .Distinct()
+                .ToListAsync();
+
+            return studentsInClass
+                .Where(s => !absentStudentIds.Contains(s.Id))
+                .ToList();
+        }
 
 
     }

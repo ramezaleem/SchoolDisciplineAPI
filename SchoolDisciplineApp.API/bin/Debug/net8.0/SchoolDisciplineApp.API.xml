@@ -73,6 +73,15 @@
             <param name="month">Month (1-12).</param>
             <returns>Absence statistics summary.</returns>
         </member>
+        <member name="M:SchoolDisciplineApp.API.Controllers.AttendanceController.GetStudentsWithNoAbsence(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Retrieves list of students who have no absence in a given class during specified month and year.
+            </summary>
+            <param name="classId">Class ID</param>
+            <param name="year">Year</param>
+            <param name="month">Month (1-12)</param>
+            <returns>List of students with no absences</returns>
+        </member>
         <member name="M:SchoolDisciplineApp.API.Controllers.AttendanceController.Add(SchoolDisciplineApp.Application.DTOs.AttendanceRecordDto)">
             <summary>
             Adds a new attendance record.

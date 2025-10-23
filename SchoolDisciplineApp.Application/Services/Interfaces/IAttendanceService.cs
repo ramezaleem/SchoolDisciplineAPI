@@ -14,7 +14,7 @@ namespace SchoolDisciplineApp.Application.Services.Interfaces
         Task DeleteAsync ( int id );
         Task<Dictionary<string, int>> GetAbsenceStatsByClassForMonthAsync ( int classId, int year, int month );
         Task<IEnumerable<AttendanceRecord>> GetByStudentAbsencesAsync ( int studentId, bool? isAbsent = null, bool? isExcused = null );
-
+        Task<List<Student>> GetStudentsWithNoAbsenceInMonthAsync ( int classId, int year, int month );
         Task<int> GetAbsenceDaysCountAsync ( int studentId, DateTime startDate, DateTime endDate, bool? isExcused = null );
     }
 }

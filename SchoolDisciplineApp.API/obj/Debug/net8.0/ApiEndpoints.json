@@ -201,6 +201,32 @@
   },
   {
     "ContainingType": "SchoolDisciplineApp.API.Controllers.AttendanceController",
+    "Method": "GetStudentsWithNoAbsence",
+    "RelativePath": "api/Attendance/students/no-absence",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "classId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "year",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "month",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SchoolDisciplineApp.API.Controllers.AttendanceController",
     "Method": "UpdateMultiple",
     "RelativePath": "api/Attendance/update-multiple",
     "HttpMethod": "PUT",

@@ -56,7 +56,10 @@ namespace SchoolDisciplineApp.Application.Services.Implementations
         {
             await _attendanceRepository.DeleteAsync(id);
         }
-
+        public async Task<List<Student>> GetStudentsWithNoAbsenceInMonthAsync ( int classId, int year, int month )
+        {
+            return await _attendanceRepository.GetStudentsWithNoAbsenceInMonthAsync(classId, year, month);
+        }
         public async Task<IEnumerable<AttendanceRecord>> GetByStudentAbsencesAsync ( int studentId, bool? isAbsent = null, bool? isExcused = null )
         {
             return await _attendanceRepository.GetByStudentAbsencesAsync(studentId, isAbsent, isExcused);

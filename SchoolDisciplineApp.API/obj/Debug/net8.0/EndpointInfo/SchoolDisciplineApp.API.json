@@ -337,6 +337,48 @@
         }
       }
     },
+    "/api/Attendance/students/no-absence": {
+      "get": {
+        "tags": [
+          "Attendance"
+        ],
+        "summary": "Retrieves list of students who have no absence in a given class during specified month and year.",
+        "parameters": [
+          {
+            "name": "classId",
+            "in": "query",
+            "description": "Class ID",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "year",
+            "in": "query",
+            "description": "Year",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "month",
+            "in": "query",
+            "description": "Month (1-12)",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Attendance/update-multiple": {
       "put": {
         "tags": [
